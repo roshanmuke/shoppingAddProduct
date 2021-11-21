@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Admin DashBoard</h1>
+  <h2>Hello {{ loggedInUser.UserName }}</h2>
+  <a
+    href="#"
+    class="btn btn-primary addBtn"
+    [routerLink]="['/dashboard/addProduct', 'add']"
+    >Add Product</a
+  >
+  <app-product-list
+    [productArr]="productArr"
+    [role]="1"
+    (deleteEvent)="getProductList()"
+  ></app-product-list>
+  <button (click)="logout()">Logout</button>
+</div>
